@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"turret" [label="turret"];
+"boom" [label="boom"];
+"stick" [label="stick"];
+"bucket" [label="bucket"];
+"tip" [label="tip"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "turret_joint" [label="xyz: 0 0 0.1 \nrpy: 0 -0 0"]
+"turret_joint" -> "turret"
+"turret" -> "boom_joint" [label="xyz: 0 0 0.7 \nrpy: 0 -0 0"]
+"boom_joint" -> "boom"
+"boom" -> "stick_joint" [label="xyz: 0 0 1 \nrpy: 0 -0 0"]
+"stick_joint" -> "stick"
+"stick" -> "bucket_joint" [label="xyz: 0 0 0.5 \nrpy: 0 -0 0"]
+"bucket_joint" -> "bucket"
+"bucket" -> "tip_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"tip_joint" -> "tip"
+}
